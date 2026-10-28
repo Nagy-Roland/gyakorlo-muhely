@@ -42,11 +42,13 @@ Készítette: Nagy Roland
 - **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** Soha ne tiltsuk le a fókuszkeretet vizuális alternatíva nélkül, mert a billentyűzetes felhasználók elveszítik a tájékozódási pontjukat.
 
 ## 5. hiba
-- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
-- **Gyökérok (melyik sor, melyik szabály sérül):** 
-- **Javítás (commit link, előtte/utána kódrészlet):** 
-- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** 
-- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** 
+- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** A képernyőolvasó angol kiejtéssel próbálja olvasni a magyar szöveget.
+- **Gyökérokok (melyik sor, melyik szabály sérül):** A `<html>` tagen hiányzik a `lang="hu"` attribútum, így a böngésző és a segédtechnológia nem tudja a dokumentum nyelvét. Ez sérti a WCAG 3.1.1 (A lap nyelve) kritériumot.
+- **Javítás (commit link, előtte/utána kódrészlet):**
+  - *Előtte:* `<html>`
+  - *Utána:* `<html lang="hu">`
+- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** Képernyőolvasó hangmotorjával ellenőrizve, hogy a helyes magyar kiejtést használja-e a felolvasás során.
+- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** A dokumentum nyelvének pontos megadása elengedhetetlen a segédtechnológiák számára a helyes fonetikai értelmezéshez.
 
 ## 6. hiba
 - **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
