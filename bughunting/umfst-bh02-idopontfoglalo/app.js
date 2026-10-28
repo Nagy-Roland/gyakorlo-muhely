@@ -20,6 +20,9 @@ function rendezes() {
 function render() {
   var lista = document.getElementById('lista');
   lista.innerHTML = '';
+
+  var fragment = document.createDocumentFragment();
+
   foglalasok.forEach(function (f, i) {
     var sorDiv = document.createElement('div');
     sorDiv.className = 'sor';
@@ -50,8 +53,9 @@ function render() {
 
     sorDiv.appendChild(spanSzoveg);
     sorDiv.appendChild(spanTorol);
-    lista.appendChild(sorDiv);
+    fragment.appendChild(sorDiv);
   });
+  lista.appendChild(fragment);
   document.querySelectorAll('.torol').forEach(function (el) {
     el.addEventListener('click', function () {
       foglalasok.splice(Number(el.dataset.i), 1);

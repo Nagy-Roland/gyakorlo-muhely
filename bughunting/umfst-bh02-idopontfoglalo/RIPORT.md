@@ -40,12 +40,12 @@ Készítette: <név>, <csoport>
 - **Tanulság / érintett alapelv:** A WCAG Működtethető / Akadálymentes alapelvei (billentyűzetes navigáció biztosítása interaktív elemeknél).
 
 ## 6. hiba
-- **Hiba leírása és reprodukálása:** 
-- **Gyökérok (sor + magyarázat):** 
-- **Javítás (commit link):** 
-- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** 
-- **Tanulság / érintett alapelv:** 
+- **Hiba leírása és reprodukálása:** 50+ foglalásnál a renderelés érezhetően lassul (a Performance panelen hosszú feladat)[cite: 1].
+- **Gyökérok (sor + magyarázat):** A folyamatos `lista.innerHTML = ''` és a ciklikus string-összefűzésen alapuló DOM-újraépítés minden műveletnél teljes újrarajzolást (reflow/repaint) kényszerít ki.
+- **Javítás (commit link):** A DOM manipulációk optimalizálása, hatékonyabb elem-létrehozási struktúrák alkalmazása.
+- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** Nagyobb elemszámú tesztadat-készlettel ellenőriztem a felület reagálóképességét.
+- **Tanulság / érintett alapelv:** A teljesítményoptimalizálás és a DOM-műveletek minimalizálása kulcsfontosságú nagy adathalmazok kezelésekor.
 
 ## Összegzés
-- Mit tanultam: 
-- Melyik alapelv sérült a leggyakrabban: 
+- Mit tanultam: Megértettem a biztonságos kódolás (XSS védelem), a logikai feltételek pontos kezelésének és az akadálymentesség fontosságát.
+- Melyik alapelv sérült a leggyakrabban: A **Biztonságos kódolási elvek** (input validáció és XSS hiánya) és a **WCAG Akadálymentességi alapelvei** (billentyűzetes navigáció).
