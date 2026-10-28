@@ -1,0 +1,13 @@
+To: anna@umfst.ro
+Subject: Jelszó-visszaállítás – UMFST
+
+Új jelszót itt állíthatsz be (30 percig érvényes):
+http://localhost:8000/uj-jelszo?token=397d2a595e4ca33b124a7519a833c8a6f00c93bd3fd85eca4d0ee8bc0752631c
+
+Ha nem te kérted, hagyd figyelmen kívül – a jelszavad nem változott.
+----
+To: anna@umfst.ro
+Subject: A jelszavad megváltozott
+
+Ha nem te voltál, azonnal írj a helpdesk@umfst.ro címre.
+----
