@@ -19,11 +19,11 @@ Készítette: <név>, <csoport>
 - **Tanulság / érintett alapelv:** A határértékek pontos kezelése (`>=` vs `>`) elengedhetetlen a logikai hibák elkerüléséhez.
 
 ## 3. hiba
-- **Hiba leírása és reprodukálása:** 
-- **Gyökérok (sor + magyarázat):** 
-- **Javítás (commit link):** 
-- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** 
-- **Tanulság / érintett alapelv:** 
+- **Hiba leírása és reprodukálása:** A lista nem rendeződik időrendre: a 08:30-as foglalás a 10:00-s után marad[cite: 1].
+- **Gyökérok (sor + magyarázat):** A `sort` metódusban feltételként `a.ido > b.ido` szerepelt, ami logikai értéket (`true`/`false`) adott vissza szám helyett, így a rendezés nem működött helyesen.
+- **Javítás (commit link):** `foglalasok.sort(function (a, b) { return a.ido.localeCompare(b.ido); })`
+- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** Különböző időrendi sorrend nélkül felvett időpontokkal teszteltem a listázást.
+- **Tanulság / érintett alapelv:** A beépített rendezőfüggvények helyes visszatérési értékekkel (`localeCompare`) történő használata.
 
 ## 4. hiba
 - **Hiba leírása és reprodukálása:** 
