@@ -51,11 +51,13 @@ Készítette: Nagy Roland
 - **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** A dokumentum nyelvének pontos megadása elengedhetetlen a segédtechnológiák számára a helyes fonetikai értelmezéshez.
 
 ## 6. hiba
-- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
-- **Gyökérok (melyik sor, melyik szabály sérül):** 
-- **Javítás (commit link, előtte/utána kódrészlet):** 
-- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** 
-- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** 
+- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** A képernyőolvasó a logó képre érkezve a nyers fájlnevet („logo.png”) olvassa fel a hasznos információ helyett.
+- **Gyökérokok (melyik sor, melyik szabály sérül):** A logó `<img>` tagen hiányzik az `alt` attribútum. Ez sérti a WCAG 1.1.1 (Nem szöveges tartalom) kritériumot, mivel a vizuális tartalomnak nincs szöveges alternatívája a látássérültek számára.
+- **Javítás (commit link, előtte/utána kódrészlet):**
+  - *Előtte:* `<img src="logo.png" width="120" height="40">`
+  - *Utána:* `<img src="logo.png" width="120" height="40" alt="UMFST Dékáni Hivatal logó">`
+- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** Képernyőolvasóval ellenőrizve, hogy a kép helyett a megadott leíró szöveget („UMFST Dékáni Hivatal logó”) olvassa-e fel a rendszer.
+- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** Minden információs tartalmú képhez kötelező alternatív szöveget (`alt`) biztosítani, hogy a segédtechnológiák értelmezni tudják.
 
 ## 7. hiba
 - **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
