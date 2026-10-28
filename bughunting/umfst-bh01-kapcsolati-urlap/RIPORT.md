@@ -59,13 +59,14 @@ Készítette: Nagy Roland
 - **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** Képernyőolvasóval ellenőrizve, hogy a kép helyett a megadott leíró szöveget („UMFST Dékáni Hivatal logó”) olvassa-e fel a rendszer.
 - **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** Minden információs tartalmú képhez kötelező alternatív szöveget (`alt`) biztosítani, hogy a segédtechnológiák értelmezni tudják.
 
-## 7. hiba
-- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
-- **Gyökérok (melyik sor, melyik szabály sérül):** 
-- **Javítás (commit link, előtte/utána kódrészlet):** 
-- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** 
-- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** 
+## 7. hiba: Érvénytelen egymásba ágyazás (W3C validációs hiba)
+- **Hiba leírása és reprodukálása:** A W3C HTML validátor érvénytelen struktúrát jelez, mert egy interaktív elem (`<button>`) egy másik interaktív elemen (`<a>`) belül helyezkedik el.
+- **Gyökérokok:** A HTML specifikáció tiltja az interaktív elemek egymásba ágyazását, mivel ez kiszámíthatatlan fókuszkezelést és akadálymentességi zavarokat okoz a segédtechnológiákban.
+- **Javítás:**
+  - *Előtte:* `<a href="#"><button>Küldés</button></a>`
+  - *Utána:* `<button type="submit">Küldés</button>`
+- **Hogyan tesztelted:** W3C HTML validátorral ellenőrizve, hogy a dokumentum hibátlanul átmegy-e a szabványossági ellenőrzésen.
 
 ## Összegzés
-- Mit tanultam: 
-- Melyik alapelv sérült a leggyakrabban: 
+- Mit tanultam: Megértettem hogy a webfejlesztés során a vizuális megjelenésen túl ugyanolyan fontos a robusztus, szemantikus HTML-szerkezet, megtanultam, hogy a képernyőolvasóknak és más eszközöknek fontosak a megfelelő <label>, lang, alt attribútumok.
+- Melyik alapelv sérült a leggyakrabban: A WCAG (Web Content Accessibility Guidelines) akadálymentességi elvei, elsősorban az Ézékelhető (Perceptible – pl. hiányzó képleírás és űrlapcímke) és a Működtethető / Navigálható (Operable – pl. fókuszkeret hiánya, hibás elem-egymásbaágyazás) alapelvek, valamint a szemantikus és szabványos HTML-használat elve.
