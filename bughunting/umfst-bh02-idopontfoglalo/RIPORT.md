@@ -12,11 +12,11 @@ Készítette: <név>, <csoport>
 - **Tanulság / érintett alapelv:** Objektumokat tartalmazó tömbökben való kereséshez nem az `indexOf`-ot, hanem a megfelelő feltételvizsgáló metódusokat (`some`) kell használni.
 
 ## 2. hiba
-- **Hiba leírása és reprodukálása:** 
-- **Gyökérok (sor + magyarázat):** 
-- **Javítás (commit link):** 
-- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** 
-- **Tanulság / érintett alapelv:** 
+- **Hiba leírása és reprodukálása:** A napi limit 8, mégis a 9. beteg is bekerül, csak a 10.-nél jön a „nincs szabad hely” üzenet[cite: 1].
+- **Gyökérok (sor + magyarázat):** A feltétel szigorú nagyobb mint (`>`) operátort használt a `>=` helyett (`foglalasok.length > MAX_NAPI`), így a 8 elemű listánál még engedte a következő elem hozzáadását.
+- **Javítás (commit link):** `if (foglalasok.length >= MAX_NAPI)`
+- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** Kitöltöttem a 8 engedélyezett slotot, majd ellenőriztem a 9. próbálkozás blokkolását.
+- **Tanulság / érintett alapelv:** A határértékek pontos kezelése (`>=` vs `>`) elengedhetetlen a logikai hibák elkerüléséhez.
 
 ## 3. hiba
 - **Hiba leírása és reprodukálása:** 
