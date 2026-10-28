@@ -26,11 +26,11 @@ Készítette: <név>, <csoport>
 - **Tanulság / érintett alapelv:** A beépített rendezőfüggvények helyes visszatérési értékekkel (`localeCompare`) történő használata.
 
 ## 4. hiba
-- **Hiba leírása és reprodukálása:** 
-- **Gyökérok (sor + magyarázat):** 
-- **Javítás (commit link):** 
-- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** 
-- **Tanulság / érintett alapelv:** 
+- **Hiba leírása és reprodukálása:** Ha a beteg neve `<img src=x onerror="document.body.style.background='red'">`, a háttér pirosra vált minden betöltéskor[cite: 1].
+- **Gyökérok (sor + magyarázat):** A felhasználótól kapott nevet közvetlenül, string-összefűzéssel illesztettük be az `innerHTML`-be, ami XSS (Cross-Site Scripting) sebezhetőséget okozott.
+- **Javítás (commit link):** Biztonságos DOM API (`document.createElement` és `.textContent`) használata a nevek megjelenítésére.
+- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** HTML tageket tartalmazó névvel teszteltem, megbizonyosodva arról, hogy a kód nem hajtódik végre, hanem sima szövegként jelenik meg.
+- **Tanulság / érintett alapelv:** Soha ne illesszünk be külső inputot közvetlenül `innerHTML`-lel; a biztonságos kódolási elvek betartása elengedhetetlen.
 
 ## 5. hiba
 - **Hiba leírása és reprodukálása:** 
