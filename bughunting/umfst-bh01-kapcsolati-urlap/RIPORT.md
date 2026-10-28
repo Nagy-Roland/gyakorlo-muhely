@@ -13,11 +13,13 @@ Készítette: Nagy Roland
 - **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** A vizuális `placeholder` szöveg nem helyettesíti a szemantikus `<label>` elemet; a segédtechnológiák számára elengedhetetlen a formális kapcsolat.
 
 ## 2. hiba
-- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
-- **Gyökérok (melyik sor, melyik szabály sérül):** 
-- **Javítás (commit link, előtte/utána kódrészlet):** 
-- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** 
-- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** 
+- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** A főcím fekete marad, pedig a CSS-ben zöldnek kellene lennie.
+- **Gyökérokok (melyik sor, melyik szabály sérül):** A `style.css` 3. sorában a `.cim` szelektorban el lett gépelve a tulajdonság neve: `colour` szerepel a helyes `color` helyett. A CSS nem ismeri a brit helyesírást, így érvénytelenként elutasítja ezt a szabályt, emiatt a szövegszín nem változik meg zöldre.
+- **Javítás (commit link, előtte/utána kódrészlet):**
+  - *Előtte:* `.cim { colour: #0e7c66; font-size: 2rem; }`
+  - *Utána:* `.cim { color: #0e7c66; font-size: 2rem; }`
+- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** Böngészőben frissítve az oldalt ellenőriztem, hogy a főcím megkapta-e a helyes zöld színt.
+- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** A CSS tulajdonságnevek pontos helyesírása elengedhetetlen; egy elgépelt betű miatt a stílus nem lép életbe.
 
 ## 3. hiba
 - **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
