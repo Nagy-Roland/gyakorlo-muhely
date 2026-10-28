@@ -31,11 +31,15 @@ Készítette: Nagy Roland
 - **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** Mindig a megfelelő HTML5 input típust kell használni a mező tartalmának megfelelően, mert ez támogatja a mobil eszközöket és a natív validációt.
 
 ## 4. hiba
-- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
-- **Gyökérok (melyik sor, melyik szabály sérül):** 
-- **Javítás (commit link, előtte/utána kódrészlet):** 
-- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** 
-- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** 
+- **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** Billentyűzettel (Tab) navigálva az űrlapon nem látszik, hogy melyik elemen van a fókusz, a küldés gombra pedig kétszer kell Tab-olni.
+- **Gyökérokok (melyik sor, melyik szabály sérül):** A CSS-ben az `outline: none` teljesen eltávolította a fókuszjelölést (ami sérti a WCAG 2.4.7 Látható fókusz kritériumot), a gomb pedig bele volt ágyazva egy `<a href="#">` hivatkozásba, ami felesleges dupla Tab-lépést és strukturális hibát okozott.
+- **Javítás (commit link, előtte/utána kódrészlet):**
+  - *CSS Előtte:* `input:focus, select:focus, textarea:focus, button:focus { outline: none; }`
+  - *CSS Utána:* `input:focus, select:focus, textarea:focus, button:focus { outline: 2px solid #0e7c66; outline-offset: 2px; }`
+  - *HTML Előtte:* `<a href="#"><button>Küldés</button></a>`
+  - *HTML Utána:* `<button type="submit">Küldés</button>`
+- **Hogyan tesztelted (W3C validátor, Lighthouse, Tab-bejárás, képernyőolvasó):** Billentyűzetes (Tab) navigációval teszteltem, hogy minden elemen jól látható, kontrasztos fókuszkeret jelenik-e meg, és a gomb egyetlen Tab-ra elérhető-e.
+- **Tanulság / érintett alapelv (pl. Szemantika előbb, stílus később; WCAG-kritérium):** Soha ne tiltsuk le a fókuszkeretet vizuális alternatíva nélkül, mert a billentyűzetes felhasználók elveszítik a tájékozódási pontjukat.
 
 ## 5. hiba
 - **Hiba leírása és reprodukálása (lépések, böngésző, segédtechnológia):** 
