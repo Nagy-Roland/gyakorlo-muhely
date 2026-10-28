@@ -33,11 +33,11 @@ Készítette: <név>, <csoport>
 - **Tanulság / érintett alapelv:** Soha ne illesszünk be külső inputot közvetlenül `innerHTML`-lel; a biztonságos kódolási elvek betartása elengedhetetlen.
 
 ## 5. hiba
-- **Hiba leírása és reprodukálása:** 
-- **Gyökérok (sor + magyarázat):** 
-- **Javítás (commit link):** 
-- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** 
-- **Tanulság / érintett alapelv:** 
+- **Hiba leírása és reprodukálása:** A Törlés feliratra Tab-bal nem lehet rálépni, Enterrel nem működik[cite: 1].
+- **Gyökérok (sor + magyarázat):** A törlés elem egy sima `<span>` volt interaktivitás, fókuszálhatóság (`tabIndex`) és billentyűzetes eseménykezelő nélkül.
+- **Javítás (commit link):** `tabIndex = 0` és `role="button"` attribútum hozzáadása, valamint `keydown` eseményfigyelő az `Enter` és `Space` billentyűkre.
+- **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):** Kizárólag billentyűzettel navigálva (Tab és Enter) teszteltem a törlési funkció működését.
+- **Tanulság / érintett alapelv:** A WCAG Működtethető / Akadálymentes alapelvei (billentyűzetes navigáció biztosítása interaktív elemeknél).
 
 ## 6. hiba
 - **Hiba leírása és reprodukálása:** 

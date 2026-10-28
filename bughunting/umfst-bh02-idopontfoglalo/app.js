@@ -30,7 +30,23 @@ function render() {
     var spanTorol = document.createElement('span');
     spanTorol.className = 'torol';
     spanTorol.textContent = 'Törlés';
-    spanTorol.setAttribute('data-i', i);
+    spanTorol.tabIndex = 0;
+    spanTorol.setAttribute('role', 'button');
+
+    var torlesFunkcio = function () {
+      foglalasok.splice(i, 1);
+      ment();
+      render();
+    };
+
+    spanTorol.addEventListener('click', torlesFunkcio);
+    
+    spanTorol.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        torlesFunkcio();
+      }
+    });
 
     sorDiv.appendChild(spanSzoveg);
     sorDiv.appendChild(spanTorol);
