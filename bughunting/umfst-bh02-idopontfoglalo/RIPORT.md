@@ -1,7 +1,7 @@
 # A rakoncátlan időpontfoglaló – hibariport
 
 Repó: https://github.com/<felhasznalo>/umfst-bh02-idopontfoglalo
-Készítette: <név>, <csoport>
+Készítette: Nagy Roland
 
 
 ## 1. hiba
